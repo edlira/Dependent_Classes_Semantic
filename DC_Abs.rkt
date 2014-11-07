@@ -444,7 +444,7 @@
 (define add-3D-points
   (term (new add  (s =  (new 3DSpace))
                                (p1 = (new Point(s = (new 3DSpace))(x = ,(make-nat 0))(y = ,(make-nat 1))(z = ,(make-nat 2))))
-                               (p2 = (new Point(s = (new 3DSpace))(x = ,(make-nat 2))(y = ,(make-nat 1))(z = ,(make-nat 0)))))))
+                               (p2 = (new Point(s = (this ! s))(x = ,(make-nat 2))(y = ,(make-nat 1))(z = ,(make-nat 0)))))))
 
 (test-true "is prog" (redex-match? DC p (make-3DPoint-prog add-3D-points)))
 (test-->> red (make-3DPoint-prog add-3D-points)
